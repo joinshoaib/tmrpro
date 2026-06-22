@@ -22,14 +22,15 @@ class GoldConversions {
     return (totalRatti * gramsPerTola) / rattiPerTola;
   }
 
-  // Rate Calculator: Money to Gold
-  static Map<String, dynamic> moneyToGold(double amount, double ratePerGram) {
-    double grams = amount / ratePerGram;
+  // Rate Calculator: Money to Gold (rate is per TOLA)
+  static Map<String, dynamic> moneyToGold(double amount, double ratePerTola) {
+    double grams = (amount / ratePerTola) * gramsPerTola;
     return {'grams': grams.toStringAsFixed(3), 'tmr': gramsToTMR(grams)};
   }
 
-  // Rate Calculator: Gold to Money
-  static double goldToMoney(double grams, double ratePerGram) {
-    return grams * ratePerGram;
+  // Rate Calculator: Gold to Money (rate is per TOLA)
+  static double goldToMoney(double grams, double ratePerTola) {
+    double tola = grams / gramsPerTola;
+    return tola * ratePerTola;
   }
 }

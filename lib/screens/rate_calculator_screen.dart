@@ -38,11 +38,15 @@ class RateCalculatorScreen extends StatelessWidget {
                 ),
                 const SizedBox(width: 8),
                 Text(
-                  'Money → Gold',
-                  style: Theme.of(context).textTheme.titleLarge,
+                  'Rate Calculator',
+                  style: Theme.of(context).textTheme.labelLarge?.copyWith(
+                    color: Theme.of(context).colorScheme.primary,
+                  ),
                 ),
               ],
             ),
+            const SizedBox(height: 4),
+            Text('Money → Gold', style: Theme.of(context).textTheme.titleLarge),
             const Divider(height: 24),
             TextField(
               controller: amountController,
@@ -60,11 +64,13 @@ class RateCalculatorScreen extends StatelessWidget {
               controller: rateController,
               keyboardType: TextInputType.number,
               decoration: InputDecoration(
-                labelText: 'Gold Rate per Gram',
+                labelText: 'Gold Rate per Tola',
                 prefixIcon: const Icon(Icons.trending_up),
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(12),
                 ),
+                suffixText: '/ Tola',
+                helperText: 'Enter market rate for 1 Tola',
               ),
             ),
             const SizedBox(height: 12),
@@ -162,11 +168,15 @@ class RateCalculatorScreen extends StatelessWidget {
                 ),
                 const SizedBox(width: 8),
                 Text(
-                  'Gold → Money',
-                  style: Theme.of(context).textTheme.titleLarge,
+                  'Rate Calculator',
+                  style: Theme.of(context).textTheme.labelLarge?.copyWith(
+                    color: Theme.of(context).colorScheme.primary,
+                  ),
                 ),
               ],
             ),
+            const SizedBox(height: 4),
+            Text('Gold → Money', style: Theme.of(context).textTheme.titleLarge),
             const Divider(height: 24),
             TextField(
               controller: gramsController,
@@ -184,11 +194,13 @@ class RateCalculatorScreen extends StatelessWidget {
               controller: rateController,
               keyboardType: TextInputType.number,
               decoration: InputDecoration(
-                labelText: 'Gold Rate per Gram',
+                labelText: 'Gold Rate per Tola',
                 prefixIcon: const Icon(Icons.trending_up),
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(12),
                 ),
+                suffixText: '/ Tola',
+                helperText: 'Enter market rate for 1 Tola',
               ),
             ),
             const SizedBox(height: 12),

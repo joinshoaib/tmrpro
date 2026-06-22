@@ -10,7 +10,7 @@ class ConverterProvider extends ChangeNotifier {
 
   // Rate calculator state
   double _amount = 0;
-  double _ratePerGram = 0;
+  double _ratePerTola = 0; // Changed from _ratePerGram
 
   // Results
   Map<String, dynamic> _tmrResult = {};
@@ -24,7 +24,7 @@ class ConverterProvider extends ChangeNotifier {
   int get masha => _masha;
   double get ratti => _ratti;
   double get amount => _amount;
-  double get ratePerGram => _ratePerGram;
+  double get ratePerTola => _ratePerTola; // Updated getter
   Map<String, dynamic> get tmrResult => _tmrResult;
   double get gramsResult => _gramsResult;
   Map<String, dynamic> get moneyToGoldResult => _moneyToGoldResult;
@@ -46,18 +46,18 @@ class ConverterProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  // Money to Gold
-  void calculateMoneyToGold(double amount, double ratePerGram) {
+  // Money to Gold (rate per TOLA)
+  void calculateMoneyToGold(double amount, double ratePerTola) {
     _amount = amount;
-    _ratePerGram = ratePerGram;
-    _moneyToGoldResult = GoldConversions.moneyToGold(amount, ratePerGram);
+    _ratePerTola = ratePerTola;
+    _moneyToGoldResult = GoldConversions.moneyToGold(amount, ratePerTola);
     notifyListeners();
   }
 
-  // Gold to Money
-  void calculateGoldToMoney(double grams, double ratePerGram) {
-    _ratePerGram = ratePerGram;
-    _goldToMoneyResult = GoldConversions.goldToMoney(grams, ratePerGram);
+  // Gold to Money (rate per TOLA)
+  void calculateGoldToMoney(double grams, double ratePerTola) {
+    _ratePerTola = ratePerTola;
+    _goldToMoneyResult = GoldConversions.goldToMoney(grams, ratePerTola);
     notifyListeners();
   }
 }
