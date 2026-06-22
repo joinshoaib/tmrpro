@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../providers/converter_provider.dart';
+import '../widgets/ad_banner.dart'; // ← Add this import
 
 class ConverterScreen extends StatelessWidget {
   const ConverterScreen({super.key});
@@ -13,7 +14,13 @@ class ConverterScreen extends StatelessWidget {
         children: [
           // Grams to TMR Card
           _buildGramsToTMRCard(context),
-          const SizedBox(height: 20),
+
+          // ─── AD BANNER BETWEEN CARDS ───
+          const SizedBox(height: 12),
+          const AdBanner(), // ← Banner ad here
+          const SizedBox(height: 12),
+          // ───────────────────────────────
+
           // TMR to Grams Card
           _buildTMRToGramsCard(context),
         ],

@@ -2,8 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'providers/converter_provider.dart';
 import 'screens/home_screen.dart';
+import 'package:google_mobile_ads/google_mobile_ads.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  // Initialize Google Mobile Ads
+  MobileAds.instance.initialize();
+
   runApp(const GoldConverterApp());
 }
 

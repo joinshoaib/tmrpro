@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../providers/converter_provider.dart';
+import '../widgets/ad_banner.dart'; // ← Add this import
 
 class RateCalculatorScreen extends StatelessWidget {
   const RateCalculatorScreen({super.key});
@@ -12,7 +13,11 @@ class RateCalculatorScreen extends StatelessWidget {
       child: Column(
         children: [
           _buildMoneyToGoldCard(context),
-          const SizedBox(height: 20),
+          // ─── AD BANNER BETWEEN CARDS ───
+          const SizedBox(height: 12),
+          const AdBanner(), // ← Banner ad here
+          const SizedBox(height: 12),
+          // ───────────────────────────────
           _buildGoldToMoneyCard(context),
         ],
       ),
