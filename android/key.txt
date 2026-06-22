@@ -1,0 +1,4 @@
+storePassword=shoaib123
+keyPassword=shoaib123
+keyAlias=key
+storeFile=C:\\Users\\NBC\\tmrconverterkey.jks
